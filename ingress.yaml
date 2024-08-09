@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: apple.example.com  # Change this to a valid host
+  - host: apple.example.com
     http:
       paths:
       - path: /apple
