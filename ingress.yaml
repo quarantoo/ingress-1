@@ -3,22 +3,23 @@ kind: Ingress
 metadata:
   name: example-ingress
   namespace: example-ingress
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
   - host: apple.example.com
     http:
       paths:
-      - path: /apple
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: apple-service
             port:
               number: 5678
-      - path: /banana
+  - host: banana.example.com
+    http:
+      paths:
+      - path: /
         pathType: Prefix
         backend:
           service:
